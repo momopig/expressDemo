@@ -1,11 +1,11 @@
 var express = require('express');
+var Sync = require('sync');
 var router = express.Router();
 const Canvas = require('canvas');
 const fs = require('fs');
 const Image = Canvas.Image;
 const canvas = new Canvas();
 const ctx = canvas.getContext('2d');
-const svg2img = require('svg2img');
 const svgToImg = require("svg-to-img");
 
 
@@ -18,33 +18,21 @@ router.get('/', function(req, res, next) {
 router.post('/api/graph/crop', function (req, res, next) {
 
   var dataUrl_svgImg = req.body.dataUrl;
+
+  // var locationInf = {"x":197,"y":0,"x2":496,"y2":203.32,"w":299,"h":203.32};
   var locationInf = JSON.parse(req.body.locationInf);
-  console.log(JSON.stringify(req.body));
-  // var img = new Image;
-  // img.onload = function() {
-  //   var locationInf = {"x":197,"y":0,"x2":496,"y2":203.32,"w":299,"h":203.32};
-  //   ctx.drawImage(img, locationInf.x, locationInf.y, locationInf.w, locationInf.h, 0, 0, locationInf.w, locationInf.h);
-  //   var dataUrl_canvas = canvas.toDataURL();
-  //   var base64Data = dataUrl_canvas.replace(/^data:image\/png;base64,/, "");
-  //   var cropperImgUrl = 'out.png';
-  //   fs.writeFileSync(cropperImgUrl, base64Data, 'base64', function(err) {
-  //     console.log(err);
-  //   });
-  //   console.log('req:' + JSON.stringify(req.body));
-  //   console.log('**************url:' + svg_dataUrl);
-  //   res.send({
-  //     imgUrl: cropperImgUrl
-  //   });
-  // };
-  // img.src = dataUrl_svgImg;
-  var svgImgName = "public/tmp/svg.jpeg";
-  (async() => {
-    await svgToImg.from(dataUrl_svgImg).toJpeg({
+  var userId = '';
+  var uniqueTag = userId +(new Date().valueOf());
+  var svgImgName = "public/tmp/svg" + uniqueTag + ".jpeg";
+
+  new Promise((resolve, reject)=>{
+    svgToImg.from(dataUrl_svgImg).toJpeg({
       path: svgImgName
-    });
-
-  })();
-
+    })
+    setTimeout(()=>{
+      resolve()
+    }, 1000)
+  }).then(() => {
     var img = new Image;
     img.src = fs.readFileSync(svgImgName);
     canvas.width = img.width;
@@ -52,33 +40,25 @@ router.post('/api/graph/crop', function (req, res, next) {
     ctx.drawImage(img, locationInf.x, locationInf.y, locationInf.w, locationInf.h, 0, 0, locationInf.w, locationInf.h);
     var dataUrl_canvas = canvas.toDataURL();
     var base64Data = dataUrl_canvas.replace(/^data:image\/png;base64,/, "");
-    var cropperImgUrl = 'public/tmp/outer.png';
+    var cropperImgUrl = 'public/tmp/output' + uniqueTag + '.png';
     fs.writeFileSync(cropperImgUrl, base64Data, 'base64', function(err) {
       console.log(err);
     });
     res.send({
-      imgUrl: 'tmp/outer.png'
+      imgUrl: cropperImgUrl.replace('public/', '')
     });
 
-  // svg2img(dataUrl_svgImg, function(error, buffer) {
-  //     var svgImgName = 'svg.png';
-  //     fs.writeFileSync(svgImgName, buffer);
-  //     var img = new Image;
-  //     img.src = fs.readFileSync(svgImgName);
-  //     var locationInf = {"x":197,"y":0,"x2":496,"y2":203.32,"w":299,"h":203.32};
-  //     ctx.drawImage(img, locationInf.x, locationInf.y, locationInf.w, locationInf.h, 0, 0, locationInf.w, locationInf.h);
-  //     var dataUrl_canvas = canvas.toDataURL();
-  //     var base64Data = dataUrl_canvas.replace(/^data:image\/png;base64,/, "");
-  //     var cropperImgUrl = 'out.png';
-  //     fs.writeFileSync(cropperImgUrl, base64Data, 'base64', function(err) {
-  //       console.log(err);
-  //     });
-  //     console.log('req:' + JSON.stringify(req.body));
-  //     console.log('**************url:' + svg_dataUrl);
-  //     res.send({
-  //       imgUrl: cropperImgUrl
-  //     });
-  // });
+    // delele tmp file after 1 min
+    setTimeout(function() {
+      var dropFileds = [svgImgName, cropperImgUrl];
+      dropFileds.forEach((item) => {
+        fs.unlink(item, () => {
+          console.log('delete file ' + cropperImgUrl + ' after 1 min.');
+        })
+      })
+
+    }, 1000 * 60)
+  })
 });
 
 module.exports = router;
