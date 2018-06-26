@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+<style>
+  #chartSVG {
+    /* width: 1000px;
+    height: 1000px; */
+  }
+
+  #imgIframe {
+    /* display: none; */
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  /* Apply these styles only when #preview-pane has
+   been placed within the Jcrop widget */
+
+  .jcrop-holder {
+    border: 1px solid #dedede;
+  }
+
+  .jcrop-holder #preview-pane {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    top: 10px;
+    right: -280px;
+    padding: 6px;
+    border: 1px rgba(0, 0, 0, .4) solid;
+    background-color: white;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* The Javascript code will set the aspect ratio of the crop
+   area based on the size of the thumbnail preview,
+   specified here */
+
+  #preview-pane .preview-container {
+    width: 250px;
+    height: 170px;
+    overflow: hidden;
+  }
+</style>
+<link rel="stylesheet" href="css/demos.css" type="text/css" />
+<link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css" />
+
+<body>
+  <p>svg:</p>
+  <div id="chartSVG">
+    <svg class="chart-container" font-size="12" width="1920" height="938" style="display: block;">
+      <g></g>
+      <g class="chart-layer" transform="translate(190.53867488092885,79.2340260178106) scale(0.7988519164491478)">
+        <g class="links">
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M684.3750036195959,312.9051926872065A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/07D571A35654AB8C395240CAE2EB413F"></path>
+            <text class="link-name officer" transform="translate(0, -5)">
+              <textPath xlink:href="#officer/07D571A35654AB8C395240CAE2EB413F" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M1092.7443132894841,147.46305607480585A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/099B39FC84FB2016418289CE49820EA1"></path>
+            <text class="link-name officer" transform="translate(-5, 0)">
+              <textPath xlink:href="#officer_099B39FC84FB2016418289CE49820EA1_reverse" startOffset="50%">高管（法定代表人,总经理,董事长）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M671.5786847232389,604.3376825035233A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/0CE08DA7879DE2E1A8EEEBE91A236787"></path>
+            <text class="link-name officer" transform="translate(0, -5)">
+              <textPath xlink:href="#officer/0CE08DA7879DE2E1A8EEEBE91A236787" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M730.8956479822061,219.81960570962357A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/11C2A9EB2B3EC1C758ADBC814C7ECAA7"></path>
+            <text class="link-name officer" transform="translate(5, 0)">
+              <textPath xlink:href="#officer/11C2A9EB2B3EC1C758ADBC814C7ECAA7" startOffset="50%">高管（副董事长）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M818.4829568680857,259.8168191749305A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/128DBB11DEC191A6D2658A613AF95960"></path>
+            <text class="link-name officer" transform="translate(5, 0)">
+              <textPath xlink:href="#officer/128DBB11DEC191A6D2658A613AF95960" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M614.8933330569473,496.5695868329775A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/183178FB11B3C15F966DDE7D047E0216"></path>
+            <text class="link-name officer" transform="translate(0, -5)">
+              <textPath xlink:href="#officer/183178FB11B3C15F966DDE7D047E0216" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M801.5520707575366,691.2709044405493A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/1B0D7E900D6613FBE5B69D4C68874DF7"></path>
+            <text class="link-name officer" transform="translate(-5, 0)">
+              <textPath xlink:href="#officer/1B0D7E900D6613FBE5B69D4C68874DF7" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M709.6900344237114,493.5677442642457A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/27E6CF99C33C58387FC650AB822CA892"></path>
+            <text class="link-name officer" transform="translate(0, -5)">
+              <textPath xlink:href="#officer/27E6CF99C33C58387FC650AB822CA892" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M1158.197585423449,730.5459973435098A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/323A1F2C43A0A8D6EAAC5AF8E22A6603"></path>
+            <text class="link-name officer" transform="translate(5, 0)">
+              <textPath xlink:href="#officer_323A1F2C43A0A8D6EAAC5AF8E22A6603_reverse" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M946.61433495166,129.1068547414971A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/5A6D6A78D9ED208B2BB5DC12C626636D"></path>
+            <text class="link-name officer" transform="translate(5, 0)">
+              <textPath xlink:href="#officer/5A6D6A78D9ED208B2BB5DC12C626636D" startOffset="50%">高管（职工监事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M845.5209507065429,161.4362475813019A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/5B88D048BE7A6A95DC6AC677CD7E1F9D"></path>
+            <text class="link-name officer" transform="translate(5, 0)">
+              <textPath xlink:href="#officer/5B88D048BE7A6A95DC6AC677CD7E1F9D" startOffset="50%">高管（监事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M923.450419360858,810.0122382026253A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/68C640E59F92866EAF7EDA7A8354B264"></path>
+            <text class="link-name officer" transform="translate(-5, 0)">
+              <textPath xlink:href="#officer/68C640E59F92866EAF7EDA7A8354B264" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M822.6148701079721,784.1642061996206A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/B1834E4069413A00FDF1A0E09013C279"></path>
+            <text class="link-name officer" transform="translate(-5, 0)">
+              <textPath xlink:href="#officer/B1834E4069413A00FDF1A0E09013C279" startOffset="50%">高管（监事）</textPath>
+            </text>
+          </g>
+          <g class="officer clickable-link">
+            <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M1298.7426775628148,418.3803963817552A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="officer/FFB85C1213E3BEEB18799925D05C36B0"></path>
+            <text class="link-name officer" transform="translate(0, -5)">
+              <textPath xlink:href="#officer_FFB85C1213E3BEEB18799925D05C36B0_reverse" startOffset="50%">高管（董事）</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1087.7796425275435,796.8481990072652A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/0005FDDC1F9CF82B9F84D37EE9756822"></path>
+            <text class="link-name tradable_share" transform="translate(5, 0)">
+              <textPath xlink:href="#tradable_share_0005FDDC1F9CF82B9F84D37EE9756822_reverse" startOffset="50%">-1,000,占比11.91%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1140.8290338616207,240.25954728032787A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/0AD0937A3A4349974CB73C88CD318927"></path>
+            <text class="link-name tradable_share" transform="translate(-5, 0)">
+              <textPath xlink:href="#tradable_share_0AD0937A3A4349974CB73C88CD318927_reverse" startOffset="50%">不变,占比4.77%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1234.3291505627722,244.10151138083472A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/3416FFA9671D2586D97351952016DE83"></path>
+            <text class="link-name tradable_share" transform="translate(-5, 0)">
+              <textPath xlink:href="#tradable_share_3416FFA9671D2586D97351952016DE83_reverse" startOffset="50%">不变,占比8.39%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1004.6961751365318,203.22980716305293A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/63F72EEA7F91A254DE6A48CD8D08CDA9"></path>
+            <text class="link-name tradable_share" transform="translate(-5, 0)">
+              <textPath xlink:href="#tradable_share_63F72EEA7F91A254DE6A48CD8D08CDA9_reverse" startOffset="50%">新进,占比2.04%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M704.5806903776363,698.6601291695869A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/8B9940D6CB42732BD271764A49655592"></path>
+            <text class="link-name tradable_share" transform="translate(-5, 0)">
+              <textPath xlink:href="#tradable_share/8B9940D6CB42732BD271764A49655592" startOffset="50%">新进,占比15.31%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1225.2336959024522,670.3465408493038A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/D8AA36D5F16F74517643155B098C2A21"></path>
+            <text class="link-name tradable_share" transform="translate(5, 0)">
+              <textPath xlink:href="#tradable_share_D8AA36D5F16F74517643155B098C2A21_reverse" startOffset="50%">不变,占比2.21%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1002.2079114120204,760.9483808804767A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/DA1D689805582D6D0DC4FB2A422CE89D"></path>
+            <text class="link-name tradable_share" transform="translate(5, 0)">
+              <textPath xlink:href="#tradable_share_DA1D689805582D6D0DC4FB2A422CE89D_reverse" startOffset="50%">不变,占比2.98%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1275.6144069476782,597.12164757187A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/DA3FD555B227F8996F6D5B239EB76937"></path>
+            <text class="link-name tradable_share" transform="translate(0, -5)">
+              <textPath xlink:href="#tradable_share_DA3FD555B227F8996F6D5B239EB76937_reverse" startOffset="50%">不变,占比2.34%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1248.2260322452898,341.8776912162767A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/E33922F0E3B7A44B1DBF1D261C6CC52D"></path>
+            <text class="link-name tradable_share" transform="translate(0, -5)">
+              <textPath xlink:href="#tradable_share_E33922F0E3B7A44B1DBF1D261C6CC52D_reverse" startOffset="50%">不变,占比3.17%</textPath>
+            </text>
+          </g>
+          <g class="tradable_share clickable-link">
+            <path class="link tradable_share clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow)" d="M1286.1030842631267,509.29054707267426A0,0 0 0 1,974.9349462052803,477.72977126507664"
+              id="tradable_share/FF32DA76C95C1529AA624F7D43D12EA0"></path>
+            <text class="link-name tradable_share" transform="translate(0, -5)">
+              <textPath xlink:href="#tradable_share_FF32DA76C95C1529AA624F7D43D12EA0_reverse" startOffset="50%">不变,占比4.14%</textPath>
+            </text>
+          </g>
+          <g class="invest_mergeEdge">
+            <path class="link invest_mergeEdge" linkIndex="1" linkMap="1" marker-end="" d="M974.9349462052803,477.72977126507664A0,0 0 0 1,652.3017498150043,392.35036649708894"
+              id="invest_mergeEdge/48912D6F30923B4CBCAC3A908127C33B"></path>
+            <text class="link-name invest_mergeEdge" transform="translate(0, -5)">
+              <textPath xlink:href="#invest_mergeEdge_48912D6F30923B4CBCAC3A908127C33B_reverse" startOffset="50%"></textPath>
+            </text>
+          </g>
+        </g>
+        <g class="nodes">
+          <g class="node" node-type="Company" transform="translate(1286.1030842631267,509.29054707267426)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">国信证券-工商银行-国信金鹏分级</tspan>
+              <tspan y="55" x="0" class="">1号集合资产管理计划</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/00D7BA6E962D5EEFF35C3205DAF53535"
+              name="国信证券-工商银行-国信金鹏分级1号集合资产管理计划" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1002.2079114120204,760.9483808804767)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">招商财富-招商银行-德赢1号专项</tspan>
+              <tspan y="55" x="0" class="">资产管理计划</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/18AB7A8BD686142140A8CA2D5E815A78"
+              name="招商财富-招商银行-德赢1号专项资产管理计划" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1140.8290338616207,240.25954728032787)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">广州市欣盛投资有限公司</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/2460F7F352E1D95B21EE3B2328E0AB60"
+              name="广州市欣盛投资有限公司" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1225.2336959024522,670.3465408493038)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">安邦人寿保险股份有限公司-保守型</tspan>
+              <tspan y="55" x="0" class="">投资组合</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/3A5C819C9AB82AF50F21A6D0E11FF462"
+              name="安邦人寿保险股份有限公司-保守型投资组合" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(974.9349462052803,477.72977126507664)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">万科企业股份有限公司</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/48912D6F30923B4CBCAC3A908127C33B"
+              name="万科企业股份有限公司" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1248.2260322452898,341.8776912162767)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">前海人寿保险股份有限公司-海利年</tspan>
+              <tspan y="55" x="0" class="">年</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/65130B6598B9229DE79AD5BA0B2DC8E2"
+              name="前海人寿保险股份有限公司-海利年年" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1087.7796425275435,796.8481990072652)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">HKSCC NOMINEES L</tspan>
+              <tspan y="55" x="0" class="">IMITED</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/7B777F28BB4A8F183648618D019D4035"
+              name="HKSCC NOMINEES LIMITED" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1004.6961751365318,203.22980716305293)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">西部利得基金-建设银行-西部利得</tspan>
+              <tspan y="55" x="0" class="">金裕1号资产管理计划</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/854C642252349A795A078E04552674C6"
+              name="西部利得基金-建设银行-西部利得金裕1号资产管理计划" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1275.6144069476782,597.12164757187)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">安邦财产保险股份有限公司-传统产</tspan>
+              <tspan y="55" x="0" class="">品</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/9334FADFB46BCED59FB08407690CE099"
+              name="安邦财产保险股份有限公司-传统产品" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(704.5806903776363,698.6601291695869)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">深圳市地铁集团有限公司</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/A76073F6DFA0097F843EDF39E26CC2D1"
+              name="深圳市地铁集团有限公司" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Company" transform="translate(1234.3291505627722,244.10151138083472)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">深圳市钜盛华股份有限公司</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" type="Company" id="Company/E8A700155B8D09CCFBF054211DB1AB72"
+              name="深圳市钜盛华股份有限公司" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(709.6900344237114,493.5677442642457)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">孙盛典</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/009E36C388137DE8A19175C46DB1BF1C"
+              name="孙盛典" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(684.3750036195959,312.9051926872065)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">刘姝威</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/26C58EABC39545C6B1E7557F09A87DC3"
+              name="刘姝威" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(1298.7426775628148,418.3803963817552)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">李强</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/27CBEA0824D5A52BD59F46470722F2DA"
+              name="李强" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(822.6148701079721,784.1642061996206)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">解冻</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/2E31EA9719ABD380DF9E899139DA3C06"
+              name="解冻" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(845.5209507065429,161.4362475813019)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">郑英</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/4FF6BFB9FAB2D50461D422195C2AF4D4"
+              name="郑英" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(1158.197585423449,730.5459973435098)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">林茂德</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/587BB2A338E408A1527D9652F745A269"
+              name="林茂德" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(614.8933330569473,496.5695868329775)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">王文金</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/5D825F0C71ACCC18AD5183FBBBFBF819"
+              name="王文金" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(1092.7443132894841,147.46305607480585)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">郁亮</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/64DE3547F44B095CE10B0B7BFAA7BAEA"
+              name="郁亮" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(801.5520707575366,691.2709044405493)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">康典</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/80641489A7A28CECE024713EF90AEA76"
+              name="康典" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(730.8956479822061,219.81960570962357)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">陈贤军</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/942BBD52409B04E39ABC7B9E35A2C532"
+              name="陈贤军" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(818.4829568680857,259.8168191749305)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">张旭</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/9B8DECCD3A024C998CA7B890E32923DE"
+              name="张旭" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(671.5786847232389,604.3376825035233)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">吴嘉宁</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/C4C26D7B281DD11570C48864E2726E1D"
+              name="吴嘉宁" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(946.61433495166,129.1068547414971)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">周清平</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/E9A25A501B6EA852DF7AE960041C6BB6"
+              name="周清平" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="Person" transform="translate(923.450419360858,810.0122382026253)">
+            <circle r="20" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">肖民</tspan>
+            </text>
+            <image xlink:href="/graph/Person.svg" width="40" height="40" contextMenuTarget="true" type="Person" id="Person/EF0B7A27076F8F47669AC0E9FCCF3AD9"
+              name="肖民" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+          <g class="node" node-type="invest_mergeNode" transform="translate(652.3017498150043,392.35036649708894)">
+            <circle r="15" class="circle"></circle>
+            <text class="node-name" y="35" style="text-anchor: middle;">
+              <tspan y="35" x="0" class="">对外投资对象(80)</tspan>
+            </text>
+            <image xlink:href="/graph/Company.svg" width="40" height="40" contextMenuTarget="true" id="invest_mergeNode/48912D6F30923B4CBCAC3A908127C33B"
+              name="对外投资对象(80)" x="-20" y="-20"></image>
+            <g class="tag-label"></g>
+          </g>
+        </g>
+      </g>
+      <defs>
+        <marker id="arrow_invest" class="arrow-marker invest" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+        <path id="officer_07D571A35654AB8C395240CAE2EB413F_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,684.3750036195959,312.9051926872065"></path>
+        <path id="officer_099B39FC84FB2016418289CE49820EA1_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1092.7443132894841,147.46305607480585"></path>
+        <path id="officer_0CE08DA7879DE2E1A8EEEBE91A236787_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,671.5786847232389,604.3376825035233"></path>
+        <path id="officer_11C2A9EB2B3EC1C758ADBC814C7ECAA7_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,730.8956479822061,219.81960570962357"></path>
+        <path id="officer_128DBB11DEC191A6D2658A613AF95960_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,818.4829568680857,259.8168191749305"></path>
+        <path id="officer_183178FB11B3C15F966DDE7D047E0216_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,614.8933330569473,496.5695868329775"></path>
+        <path id="officer_1B0D7E900D6613FBE5B69D4C68874DF7_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,801.5520707575366,691.2709044405493"></path>
+        <path id="officer_27E6CF99C33C58387FC650AB822CA892_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,709.6900344237114,493.5677442642457"></path>
+        <path id="officer_323A1F2C43A0A8D6EAAC5AF8E22A6603_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1158.197585423449,730.5459973435098"></path>
+        <path id="officer_5A6D6A78D9ED208B2BB5DC12C626636D_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,946.61433495166,129.1068547414971"></path>
+        <path id="officer_5B88D048BE7A6A95DC6AC677CD7E1F9D_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,845.5209507065429,161.4362475813019"></path>
+        <path id="officer_68C640E59F92866EAF7EDA7A8354B264_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,923.450419360858,810.0122382026253"></path>
+        <path id="officer_B1834E4069413A00FDF1A0E09013C279_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,822.6148701079721,784.1642061996206"></path>
+        <path id="officer_FFB85C1213E3BEEB18799925D05C36B0_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1298.7426775628148,418.3803963817552"></path>
+        <path id="tradable_share_0005FDDC1F9CF82B9F84D37EE9756822_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1087.7796425275435,796.8481990072652"></path>
+        <path id="tradable_share_0AD0937A3A4349974CB73C88CD318927_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1140.8290338616207,240.25954728032787"></path>
+        <path id="tradable_share_3416FFA9671D2586D97351952016DE83_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1234.3291505627722,244.10151138083472"></path>
+        <path id="tradable_share_63F72EEA7F91A254DE6A48CD8D08CDA9_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1004.6961751365318,203.22980716305293"></path>
+        <path id="tradable_share_8B9940D6CB42732BD271764A49655592_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,704.5806903776363,698.6601291695869"></path>
+        <path id="tradable_share_D8AA36D5F16F74517643155B098C2A21_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1225.2336959024522,670.3465408493038"></path>
+        <path id="tradable_share_DA1D689805582D6D0DC4FB2A422CE89D_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1002.2079114120204,760.9483808804767"></path>
+        <path id="tradable_share_DA3FD555B227F8996F6D5B239EB76937_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1275.6144069476782,597.12164757187"></path>
+        <path id="tradable_share_E33922F0E3B7A44B1DBF1D261C6CC52D_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1248.2260322452898,341.8776912162767"></path>
+        <path id="tradable_share_FF32DA76C95C1529AA624F7D43D12EA0_reverse" d="M974.9349462052803,477.72977126507664A0,0 0 0 0,1286.1030842631267,509.29054707267426"></path>
+        <path id="invest_mergeEdge_48912D6F30923B4CBCAC3A908127C33B_reverse" d="M652.3017498150043,392.35036649708894A0,0 0 0 0,974.9349462052803,477.72977126507664"></path>
+      </defs>
+      <defs>
+        <marker id="arrowStart_invest" class="arrow-marker invest" refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_shareholder" class="arrow-marker shareholder" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_shareholder" class="arrow-marker shareholder" refX="-20" refY="5" markerUnits="userSpaceOnUse"
+          markerWidth="20" markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_officer" class="arrow-marker officer" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_officer" class="arrow-marker officer" refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_concert" class="arrow-marker concert" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_concert" class="arrow-marker concert" refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_actual_controller" class="arrow-marker actual_controller" refX="29" refY="5" markerUnits="userSpaceOnUse"
+          markerWidth="20" markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_actual_controller" class="arrow-marker actual_controller" refX="-20" refY="5" markerUnits="userSpaceOnUse"
+          markerWidth="20" markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_control_shareholder" class="arrow-marker control_shareholder" refX="29" refY="5" markerUnits="userSpaceOnUse"
+          markerWidth="20" markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_control_shareholder" class="arrow-marker control_shareholder" refX="-20" refY="5" markerUnits="userSpaceOnUse"
+          markerWidth="20" markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_family" class="arrow-marker family" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_family" class="arrow-marker family" refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_guarantee" class="arrow-marker guarantee" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart_guarantee" class="arrow-marker guarantee" refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow" class="arrow-marker " refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20"
+          orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrowStart" class="arrow-marker " refX="-20" refY="5" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20"
+          orient="auto">
+          <path d="M10,0 L0,5 L10,10 L8,5 z"></path>
+        </marker>
+      </defs>
+      <defs>
+        <marker id="arrow_highlight" class="arrow-marker highlight" refX="29" refY="5" markerUnits="userSpaceOnUse" markerWidth="20"
+          markerHeight="20" orient="auto">
+          <path d="M0,0 L10,5 L0,10 L2,5 z"></path>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+  <p>img:</p>
+  <img id="target"/>
+  <div id="preview-pane">
+    <div class="preview-container">
+      <img src="" class="jcrop-preview" alt="Preview" />
+    </div>
+  </div>
+  <div id="crop">裁剪</div>
+  <canvas id="canvas" crossOrigin="Anonymous"></canvas>
+  <iframe id="imgIframe"></iframe>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.base64.min.js"></script>
+<script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="js/Blob.js"></script>
+<script type="text/javascript" src="js/FileSaver.min.js"></script>
+<!-- <script type="text/javascript" src="js/canvas-toBlob.js"></script> -->
+
+<script>
+
+  //无窗口弹出   
+  function mm1(url) {
+    console.log('mm1')
+    window.frames["imgIframe"].location.href = url;
+    sa();
+  }
+  function sa() {
+    if (window.frames["imgIframe"].document.readyState != "complete") {
+      setTimeout("sa()", 1000);
+    } else {
+      window.frames["imgIframe"].document.execCommand('SaveAs');
+    }
+  }
+
+  /**
+   * @desc 将svg img对应的data url传给后端，后端生成一个jpg或png图片，并返回该图片的rul给前端
+   * 
+  */
+  function getImgUrlFromServer(dataUrl, locationInf, imgType, callback) {
+    $.ajax({
+      url: '/api/graph/crop',
+      method: 'post',
+      data: {
+        dataUrl: dataUrl,
+        locationInf: JSON.stringify(locationInf),
+      },
+      dataType: 'json',
+      success: function (data) {
+        callback(data.imgUrl)
+        console.log(data.imgUrl)
+      }
+    })
+  }
+
+  var compressSpaces = function (s) { return s.replace(/[\s\r\t\n]+/gm, ' '); }
+  var trim = function (s) { return s.replace(/^\s+|\s+$/g, ''); }
+  var cssDom = document.createElement('style');
+  cssDom.type = 'text/css';
+  cssDom.innerHTML = 'svg {width:100%;height:100%;z-index:0}.chart-container .node image{cursor:pointer}.chart-container .node .circle{fill:#fff;stroke:#d4dadf;stroke-width:2px}.chart-container .node.blur-node .circle{fill:#fbfbfb}.chart-container .node.start-node .circle{fill:lime;stroke-width:0px}.chart-container .node.end-node .circle{fill:red;stroke-width:0px}.chart-container .node.current-node .circle,.chart-container .node.current-node[node-type=Person] .circle{fill:#f18424;stroke-width:0px}.chart-container .node.current-node[node-type=Company] .circle{fill:#008cff;stroke-width:0px}.chart-container .node.current-node[node-type=Bid_detail] .circle{fill:#8b72e5;stroke-width:0px}.chart-container .node.current-node[node-type=Court_bulletin_doc] .circle{fill:#757f89;stroke-width:0px}.chart-container .node.current-node[node-type=Judge_process] .circle{fill:#b99465;stroke-width:0px}.chart-container .node.current-node[node-type=Judgement_wenshu] .circle{fill:#d7a048;stroke-width:0px}.chart-container .node.current-node[node-type=Court_announcement_doc] .circle{fill:#6e80de;stroke-width:0px}.chart-container .node.current-node[node-type=Company_belong] .circle{fill:#5ebc00;stroke-width:0px}.chart-container .node.hover-node .circle,.chart-container .node.hover-node[node-type=Person] .circle{fill:rgba(241,132,36,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Company] .circle{fill:rgba(0,140,255,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Bid_detail] .circle{fill:rgba(139,114,229,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Court_bulletin_doc] .circle{fill:hsla(210,8%,50%,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Judge_process] .circle{fill:hsla(34,38%,56%,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Judgement_wenshu] .circle{fill:rgba(215,160,72,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Court_announcement_doc] .circle{fill:rgba(110,128,222,.6);stroke-width:0px}.chart-container .node.hover-node[node-type=Company_belong] .circle{fill:rgba(94,188,0,.6);stroke-width:0px}.chart-container .node[node-type=shareholder_mergeNode] .circle{fill:#7a67cb;stroke-width:0px}.chart-container .node[node-type=money_flow_mergeNode] .circle{fill:#f97411;stroke-width:0px}.chart-container .node[node-type=officer_mergeNode] .circle{fill:#7f9eff;stroke-width:0px}.chart-container .node[node-type=invest_mergeNode] .circle{fill:#c3cd45;stroke-width:0px}.chart-container .node[node-type=concert_mergeNode] .circle{fill:#41c7ca;stroke-width:0px}.chart-container .node[node-type=sue_mergeNode] .circle{fill:#c9165d;stroke-width:0px}.chart-container .node[node-type=bid_mergeNode] .circle{fill:#3d79d8;stroke-width:0px}.chart-container .node[node-type=guarantee_mergeNode] .circle{fill:#f8090c;stroke-width:0px}.chart-container .node[node-type=out_control_shareholder_mergeNode] .circle{fill:#109e52;stroke-width:0px}.chart-container .node[node-type=out_actual_controller_mergeNode] .circle{fill:#90d055;stroke-width:0px}.chart-container .node.current-node[node-type=shareholder_mergeNode] .circle,.chart-container .node.hover-node[node-type=shareholder_mergeNode] .circle{stroke-width:3px;stroke:rgba(122,103,203,.4)}.chart-container .node.current-node[node-type=money_flow_mergeNode] .circle,.chart-container .node.hover-node[node-type=money_flow_mergeNode] .circle{stroke-width:3px;stroke:rgba(249,116,17,.4)}.chart-container .node.current-node[node-type=officer_mergeNode] .circle,.chart-container .node.hover-node[node-type=officer_mergeNode] .circle{stroke-width:3px;stroke:rgba(127,158,255,.4)}.chart-container .node.current-node[node-type=invest_mergeNode] .circle,.chart-container .node.hover-node[node-type=invest_mergeNode] .circle{stroke-width:3px;stroke:rgba(195,205,69,.4)}.chart-container .node.current-node[node-type=concert_mergeNode] .circle,.chart-container .node.hover-node[node-type=concert_mergeNode] .circle{stroke-width:3px;stroke:rgba(65,199,202,.4)}.chart-container .node.current-node[node-type=sue_mergeNode] .circle,.chart-container .node.hover-node[node-type=sue_mergeNode] .circle{stroke-width:3px;stroke:rgba(201,22,93,.4)}.chart-container .node.current-node[node-type=bid_mergeNode] .circle,.chart-container .node.hover-node[node-type=bid_mergeNode] .circle{stroke-width:3px;stroke:rgba(61,121,216,.4)}.chart-container .node.current-node[node-type=guarantee_mergeNode] .circle,.chart-container .node.hover-node[node-type=guarantee_mergeNode] .circle{stroke-width:3px;stroke:rgba(248,9,12,.4)}.chart-container .node.current-node[node-type=out_control_shareholder_mergeNode] .circle,.chart-container .node.hover-node[node-type=out_control_shareholder_mergeNode] .circle{stroke-width:3px;stroke:rgba(16,158,82,.4)}.chart-container .node.current-node[node-type=out_actual_controller_mergeNode] .circle,.chart-container .node.hover-node[node-type=out_actual_controller_mergeNode] .circle{stroke-width:3px;stroke:rgba(144,208,85,.4)}.chart-container .node-name{stroke:none;fill:#44494f}.chart-container .node-name.node-name-blur{fill:#a3a9b0}.chart-container .node-name.node-name-highlight{fill:#475461;font-weight:700}.chart-container .node-name .risk-status{fill:#d00001}.chart-container .link-name{fill:#a3a9b0;text-anchor:middle}.chart-container .link-name.officer{fill:#ffcea2}.chart-container .link-name.invest{fill:#a9d9ff}.chart-container .link-name.actual_controller,.chart-container .link-name.concert,.chart-container .link-name.control_shareholder,.chart-container .link-name.control_shareholders,.chart-container .link-name.guarantee{fill:#fc4239}.chart-container .link-name.link-name-highlight{fill:#475461}.chart-container .arrow-marker{fill:#c1c8cf}.chart-container .arrow-marker.invest,.chart-container .arrow-marker.shareholder{fill:#a9d9ff}.chart-container .arrow-marker.officer{fill:#ffcea2}.chart-container .arrow-marker.actual_controller,.chart-container .arrow-marker.concert,.chart-container .arrow-marker.control_shareholder,.chart-container .arrow-marker.control_shareholders,.chart-container .arrow-marker.guarantee{fill:#fc4239}.chart-container .links{cursor:default}.chart-container .links .guarantee:hover,.chart-container .links .money_flow:hover,.chart-container .links .personal_money_flow:hover{cursor:pointer}.chart-container .link{stroke:#c1c8cf;fill:none}.chart-container .link.officer{stroke:#ffcea2}.chart-container .link.invest{stroke:#a9d9ff}.chart-container .link.actual_controller,.chart-container .link.concert,.chart-container .link.control_shareholder,.chart-container .link.control_shareholders,.chart-container .link.guarantee{stroke:#fc4239}.chart-container .link.link-highlight{stroke-width:2px}.chart-container .link.link-dashed{stroke-dasharray:5,5}';
+  $('svg').prepend(cssDom);
+  var cssStrs = compressSpaces(cssDom.childNodes[0].data);
+  var cssSelectors = cssStrs.split('}');
+  for (var i = 0; i < cssSelectors.length; i++) {
+    if (trim(cssSelectors[i]) != '') {
+      var cssSelector = cssSelectors[i].split('{');
+      var cssClasses = cssSelector[0].split(',');
+      var cssProps = cssSelector[1].split(';');
+      for (var j = 0; j < cssClasses.length; j++) {
+        var cssClass = trim(cssClasses[j]);
+        if (cssClass != '') {
+          for (var k = 0; k < cssProps.length; k++) {
+            var prop = cssProps[k].indexOf(':');
+            var name = cssProps[k].substr(0, prop);
+            var value = cssProps[k].substr(prop + 1, cssProps[k].length - prop);
+            if (name != null && value != null) {
+              if (name === 'width') {
+                value = $(cssClass).width()
+              }
+              if (name === 'height') {
+                value = $(cssClass).height()
+              }
+              $(cssClass).attr(name, value);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  var $cloneDom = $('#chartSVG').clone();
+  var svgDom = $cloneDom[0].firstElementChild;
+  
+  $(svgDom).prepend(cssDom);
+
+    $cloneDom.find('image').each(function (index, item) {
+      var tmpSvgXML = '';
+      var x = $(item).attr('x') || 0;
+      var y = $(item).attr('y') || 0;
+      if (item.href.baseVal === '/graph/Person.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+                <svg width="40px" height="40px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Group 7 Copy 6</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 16 0 16 16 0 16"></polygon>
+                    </defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-7-Copy-6">
+                            <g id="Group-20-Copy">
+                                <g transform="translate(12.000000, 12.000000)">
+                                    <g id="Shape-Copy-20" opacity="0">
+                                        <use fill="#44C6C9" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                        <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L15,1 L15,15 L1,15 L1,1 Z"></path>
+                                    </g>
+                                    <path d="M8,8 C9.768,8 11.2,6.568 11.2,4.8 C11.2,3.032 9.768,1.6 8,1.6 C6.232,1.6 4.8,3.032 4.8,4.8 C4.8,6.568 6.232,8 8,8 L8,8 Z M8,9.82857143 C5.864,9.82857143 1.6,10.8495238 1.6,12.8761905 L1.6,14.4 L14.4,14.4 L14.4,12.8761905 C14.4,10.8495238 10.136,9.82857143 8,9.82857143 L8,9.82857143 Z" id="Shape-Copy-21" fill="#F18424"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/Company.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+                <svg width="40px" height="40px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch Beta 43.2 (39068) - http://www.bohemiancoding.com/sketch -->
+                    <title>Group 4 Copy 9</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 16 0 16 16 0 16"></polygon>
+                    </defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-4-Copy-9">
+                            <g id="Group-19">
+                                <g transform="translate(12.000000, 12.000000)">
+                                    <g id="Shape-Copy-22" opacity="0">
+                                        <use fill="#E8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                        <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L15,1 L15,15 L1,15 L1,1 Z"></path>
+                                    </g>
+                                    <path d="M8,4.88888889 L8,2.4 L1.6,2.4 L1.6,13.6 L14.4,13.6 L14.4,4.88888889 L8,4.88888889 L8,4.88888889 Z M4.16,12.3555556 L2.88,12.3555556 L2.88,11.1111111 L4.16,11.1111111 L4.16,12.3555556 L4.16,12.3555556 Z M4.16,9.86666667 L2.88,9.86666667 L2.88,8.62222222 L4.16,8.62222222 L4.16,9.86666667 L4.16,9.86666667 Z M4.16,7.37777778 L2.88,7.37777778 L2.88,6.13333333 L4.16,6.13333333 L4.16,7.37777778 L4.16,7.37777778 Z M4.16,4.88888889 L2.88,4.88888889 L2.88,3.64444444 L4.16,3.64444444 L4.16,4.88888889 L4.16,4.88888889 Z M6.72,12.3555556 L5.44,12.3555556 L5.44,11.1111111 L6.72,11.1111111 L6.72,12.3555556 L6.72,12.3555556 Z M6.72,9.86666667 L5.44,9.86666667 L5.44,8.62222222 L6.72,8.62222222 L6.72,9.86666667 L6.72,9.86666667 Z M6.72,7.37777778 L5.44,7.37777778 L5.44,6.13333333 L6.72,6.13333333 L6.72,7.37777778 L6.72,7.37777778 Z M6.72,4.88888889 L5.44,4.88888889 L5.44,3.64444444 L6.72,3.64444444 L6.72,4.88888889 L6.72,4.88888889 Z M13.12,12.3555556 L8,12.3555556 L8,11.1111111 L9.28,11.1111111 L9.28,9.86666667 L8,9.86666667 L8,8.62222222 L9.28,8.62222222 L9.28,7.37777778 L8,7.37777778 L8,6.13333333 L13.12,6.13333333 L13.12,12.3555556 L13.12,12.3555556 Z M11.84,7.37777778 L10.56,7.37777778 L10.56,8.62222222 L11.84,8.62222222 L11.84,7.37777778 L11.84,7.37777778 Z M11.84,9.86666667 L10.56,9.86666667 L10.56,11.1111111 L11.84,11.1111111 L11.84,9.86666667 L11.84,9.86666667 Z" id="Shape-Copy-23" fill="#008EFF"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/Bid_detail.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg width="44px" height="44px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+                    <title>Slice 5</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 20 0 20 20 0 20"></polygon>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-10-Copy" transform="translate(12.000000, 12.000000)">
+                            <use id="Shape-Copy-16" stroke="#D0D0D0" mask="url(#mask-2)" stroke-width="4" fill="#E8D8D8" opacity="0" xlink:href="#path-1"></use>
+                            <path d="M3,2 L17,2 L17,18 L3,18 L3,2 Z M5,4 L8,4 L8,9 L6.5,8 L5,9 L5,4 Z" id="Combined-Shape" fill="#8B72E5"></path>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/Company_highlight.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+                <svg width="40px" height="40px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch Beta 44 (41325) - http://www.bohemiancoding.com/sketch -->
+                    <title>Group 4 Copy 13</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 16 0 16 16 0 16"></polygon>
+                    </defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-4-Copy-13">
+                            <g id="Group-19">
+                                <g transform="translate(12.000000, 12.000000)">
+                                    <g id="Shape-Copy-22" opacity="0">
+                                        <use fill="#E8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                        <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L1,15 L15,15 L15,1 L1,1 Z"></path>
+                                    </g>
+                                    <path d="M8,4.88888889 L8,2.4 L1.6,2.4 L1.6,13.6 L14.4,13.6 L14.4,4.88888889 L8,4.88888889 L8,4.88888889 Z M4.16,12.3555556 L2.88,12.3555556 L2.88,11.1111111 L4.16,11.1111111 L4.16,12.3555556 L4.16,12.3555556 Z M4.16,9.86666667 L2.88,9.86666667 L2.88,8.62222222 L4.16,8.62222222 L4.16,9.86666667 L4.16,9.86666667 Z M4.16,7.37777778 L2.88,7.37777778 L2.88,6.13333333 L4.16,6.13333333 L4.16,7.37777778 L4.16,7.37777778 Z M4.16,4.88888889 L2.88,4.88888889 L2.88,3.64444444 L4.16,3.64444444 L4.16,4.88888889 L4.16,4.88888889 Z M6.72,12.3555556 L5.44,12.3555556 L5.44,11.1111111 L6.72,11.1111111 L6.72,12.3555556 L6.72,12.3555556 Z M6.72,9.86666667 L5.44,9.86666667 L5.44,8.62222222 L6.72,8.62222222 L6.72,9.86666667 L6.72,9.86666667 Z M6.72,7.37777778 L5.44,7.37777778 L5.44,6.13333333 L6.72,6.13333333 L6.72,7.37777778 L6.72,7.37777778 Z M6.72,4.88888889 L5.44,4.88888889 L5.44,3.64444444 L6.72,3.64444444 L6.72,4.88888889 L6.72,4.88888889 Z M13.12,12.3555556 L8,12.3555556 L8,11.1111111 L9.28,11.1111111 L9.28,9.86666667 L8,9.86666667 L8,8.62222222 L9.28,8.62222222 L9.28,7.37777778 L8,7.37777778 L8,6.13333333 L13.12,6.13333333 L13.12,12.3555556 L13.12,12.3555556 Z M11.84,7.37777778 L10.56,7.37777778 L10.56,8.62222222 L11.84,8.62222222 L11.84,7.37777778 L11.84,7.37777778 Z M11.84,9.86666667 L10.56,9.86666667 L10.56,11.1111111 L11.84,11.1111111 L11.84,9.86666667 L11.84,9.86666667 Z" id="Shape-Copy-23" fill="#FFFFFF"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/invest.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+                <svg width="30px" height="30px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch Beta 45 (43276) - http://www.bohemiancoding.com/sketch -->
+                    <title>Group 4 Copy 24</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 18 0 18 18 0 18"></polygon>
+                    </defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-4-Copy-24">
+                            <g id="Group-5">
+                                <g transform="translate(6.000000, 6.000000)">
+                                    <g id="Shape-Copy-22" opacity="0">
+                                        <use fill="#E7D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                        <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L1,17 L17,17 L17,1 L1,1 Z"></path>
+                                    </g>
+                                    <path d="M11.8311624,11.0582137 C12.2518212,10.4805736 12.5,9.76926942 12.5,9 C12.5,7.94152017 12.0301352,6.99278315 11.287603,6.35098631 L12.2168541,4.97331488 C12.3085472,4.99083126 12.4032029,5 12.5,5 C13.3284271,5 14,4.32842712 14,3.5 C14,2.67157288 13.3284271,2 12.5,2 C11.6715729,2 11,2.67157288 11,3.5 C11,3.82080109 11.1007062,4.11808099 11.2722294,4.36195048 L10.3285793,5.76096923 C9.91891441,5.59275512 9.47028926,5.5 9,5.5 C7.25848388,5.5 5.81404261,6.77192861 5.54496202,8.4375 L3.82691503,8.4375 C3.64691793,8.17340366 3.34370926,8 3,8 C2.44771525,8 2,8.44771525 2,9 C2,9.55228475 2.44771525,10 3,10 C3.34370926,10 3.64691793,9.82659634 3.82691503,9.5625 L5.54496202,9.5625 C5.81404261,11.2280714 7.25848388,12.5 9,12.5 C9.75765047,12.5 10.4590735,12.2592615 11.0319487,11.8501048 L12.2222811,13.0827301 C12.080229,13.3574776 12,13.6693696 12,14 C12,15.1045695 12.8954305,16 14,16 C15.1045695,16 16,15.1045695 16,14 C16,12.8954305 15.1045695,12 14,12 C13.635453,12 13.2936861,12.0975333 12.9993705,12.2679287 L11.8311624,11.0582137 Z" id="Combined-Shape" fill="#C1CF4B"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/officer.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+                <svg width="30px" height="30px" x="‘ + x + ‘" y="‘ + y + ‘"
+                viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch Beta 45 (43276) - http://www.bohemiancoding.com/sketch -->
+                    <title>Group 4 Copy 26</title>
+                    <desc>Created with Sketch Beta.</desc>
+                    <defs>
+                        <polygon id="path-1" points="0 0 18 0 18 18 0 18"></polygon>
+                    </defs>
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group-4-Copy-26">
+                            <g id="Group-5">
+                                <g transform="translate(6.000000, 6.000000)">
+                                    <g id="Shape-Copy-22" opacity="0">
+                                        <use fill="#E7D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                        <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L1,17 L17,17 L17,1 L1,1 Z"></path>
+                                    </g>
+                                    <path d="M11.8311624,11.0582137 C12.2518212,10.4805736 12.5,9.76926942 12.5,9 C12.5,7.94152017 12.0301352,6.99278315 11.287603,6.35098631 L12.2168541,4.97331488 C12.3085472,4.99083126 12.4032029,5 12.5,5 C13.3284271,5 14,4.32842712 14,3.5 C14,2.67157288 13.3284271,2 12.5,2 C11.6715729,2 11,2.67157288 11,3.5 C11,3.82080109 11.1007062,4.11808099 11.2722294,4.36195048 L10.3285793,5.76096923 C9.91891441,5.59275512 9.47028926,5.5 9,5.5 C7.25848388,5.5 5.81404261,6.77192861 5.54496202,8.4375 L3.82691503,8.4375 C3.64691793,8.17340366 3.34370926,8 3,8 C2.44771525,8 2,8.44771525 2,9 C2,9.55228475 2.44771525,10 3,10 C3.34370926,10 3.64691793,9.82659634 3.82691503,9.5625 L5.54496202,9.5625 C5.81404261,11.2280714 7.25848388,12.5 9,12.5 C9.75765047,12.5 10.4590735,12.2592615 11.0319487,11.8501048 L12.2222811,13.0827301 C12.080229,13.3574776 12,13.6693696 12,14 C12,15.1045695 12.8954305,16 14,16 C15.1045695,16 16,15.1045695 16,14 C16,12.8954305 15.1045695,12 14,12 C13.635453,12 13.2936861,12.0975333 12.9993705,12.2679287 L11.8311624,11.0582137 Z" id="Combined-Shape" fill="#F77824"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>‘
+      }
+      else if (item.href.baseVal === '/graph/mergeNode.svg') {
+        tmpSvgXML = ‘<?xml version="1.0" encoding="UTF-8"?>
+        <svg width="32px" height="32px"  x="‘ + (parseInt(x)+4) + ‘" y="‘ + (parseInt(y)+4) + ‘"
+        viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+            <title>Group 7 Copy 30</title>
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <polygon id="path-1" points="0 0 16 0 16 16 0 16"></polygon>
+            </defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Group-7-Copy-30">
+                    <g id="Group-6-Copy-13">
+                        <g transform="translate(8.000000, 8.000000)">
+                            <g id="Shape-Copy-20" opacity="0">
+                                <use fill="#E7D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <path stroke="#D0D0D0" stroke-width="2" d="M1,1 L1,15 L15,15 L15,1 L1,1 Z"></path>
+                            </g>
+                            <circle id="Oval-2" fill="#FFFFFF" cx="2" cy="8" r="2"></circle>
+                            <circle id="Oval-2-Copy" fill="#FFFFFF" cx="8" cy="8" r="2"></circle>
+                            <circle id="Oval-2-Copy-2" fill="#FFFFFF" cx="14" cy="8" r="2"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>‘
+      }
+      $(tmpSvgXML).replaceAll(item);
+    })
+    $cloneDom.find('svg.chart-container').attr({
+      'version': 1.1,
+      'style': 'background: white; display: block;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);'
+    })
+  // var companyImgDom = new Image();
+  // var dataUrl_companyImg = '';
+  // companyImgDom.onload = function() {
+  //   var canvas = document.createElement('canvas');
+  //   canvas.width = this.width;
+  //   canvas.height = this.height;
+  //   var ctx = canvas.getContext('2d');
+  //   ctx.drawImage(this, 0, 0);
+  //   dataUrl_companyImg = canvas.toDataURL();
+  //   $('image[type="Company"]').each(function() {
+  //     $(this).attr('xlink:href', '');
+  //     $(this).attr('href', dataUrl_companyImg);
+  //   });
+  // }
+  // companyImgDom.src = '/graph/Company.svg';
+
+  var xmlSVG;
+  if (XMLSerializer) {
+    xmlSVG = new XMLSerializer().serializeToString(svgDom);
+  } else if (svgDom.xml) {
+    xmlSVG = svgDom.xml;
+  }
+  // var dataUrl_svgImg = 'data:image/svg+xml;base64,' + jQuery.base64.encode(unescape(encodeURIComponent(xmlSVG)));
+  var dataUrl_svgImg = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(xmlSVG)));
+
+  var imageDom = document.getElementById('target');
+  var locationInf;
+  imageDom.onload = function () {
+    document.querySelector('body').appendChild(imageDom);
+    // Create variables (in this scope) to hold the API and image size
+    var jcrop_api;
+    var boundx;
+    var boundy;
+
+    // Grab some information about the preview pane
+    var $preview = $('#preview-pane');
+    var $pcnt = $('#preview-pane .preview-container');
+    var $pimg = $('#preview-pane .preview-container img');
+    var xsize = $pcnt.width();
+    var ysize = $pcnt.height();
+
+    $pimg.attr('src', dataUrl_svgImg);
+    $('#target').Jcrop({
+      onChange: updatePreview,
+      onSelect: updatePreview,
+      bgColor: 'white',
+      bgOpacity: .4,
+      minSize: [xsize, ysize],
+      // setSelect:   [0, 0, 500, 500],
+      aspectRatio: xsize / ysize
+    }, function () {
+      // Use the API to get the real image size
+      var bounds = this.getBounds();
+      boundx = bounds[0];
+      boundy = bounds[1];
+
+      jcrop_api = this;
+      jcrop_api.animateTo([100, 100, 400, 300]);
+
+      // Setup and dipslay the interface for "enabled"
+      $('#can_click,#can_move,#can_size').attr('checked', 'checked');
+      $('#ar_lock,#size_lock,#bg_swap').attr('checked', false);
+      $('.requiresjcrop').show();
+      // Move the preview into the jcrop container for css positioning
+      $preview.appendTo(jcrop_api.ui.holder);
+    });
+
+    function updatePreview(c) {
+      locationInf = c;
+      console.log(c);
+      if (parseInt(c.w) > 0) {
+        var rx = xsize / c.w;
+        var ry = ysize / c.h;
+
+        $pimg.css({
+          width: Math.round(rx * boundx) + 'px',
+          height: Math.round(ry * boundy) + 'px',
+          marginLeft: '-' + Math.round(rx * c.x) + 'px',
+          marginTop: '-' + Math.round(ry * c.y) + 'px'
+        });
+      }
+
+    };
+
+  }
+  imageDom.crossOrigin = "anonymous";  // This enables CORS
+  imageDom.src = dataUrl_svgImg;
+
+  //**dataURL to blob**
+  function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], { type: mime });
+  }
+
+  $('#crop').on('click', function () {
+    var canvas = document.getElementById('canvas');
+    var $img = $('.jcrop-holder img');
+    canvas.width = locationInf.w;
+    canvas.height = locationInf.h;
+    canvas.style.backgroundColor = 'white';
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(imageDom, locationInf.x, locationInf.y, locationInf.w, locationInf.h, 0, 0, locationInf.w, locationInf.h);
+    var a = document.createElement('a');
+
+    getImgUrlFromServer(xmlSVG, locationInf, 'png', function (url) {
+      mm1(url);
+    })
+    // chrome
+    if (a.download !== undefined) {
+      var dataUrl_canvas = canvas.toDataURL();
+      var event = new MouseEvent('click');
+      a.download = name || '下载图片名称';
+      a.href = dataUrl_canvas;
+      a.dispatchEvent(event);
+
+      getImgUrlFromServer(xmlSVG, locationInf, 'png', function (url) {
+        mm1(url);
+      })
+    } else { //ie
+      getImgUrlFromServer(xmlSVG, locationInf, 'png', function (url) {
+        mm1(url);
+      })
+
+    }
+  })
+
+</script>
+
+</html>
