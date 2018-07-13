@@ -1,5 +1,4 @@
 var express = require('express');
-var Sync = require('sync');
 var router = express.Router();
 const Canvas = require('canvas');
 const fs = require('fs');
