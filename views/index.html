@@ -23,9 +23,11 @@
   .jcrop-holder #preview-pane {
     display: block;
     position: absolute;
+    width: 500px;
+    height: 500px;
     z-index: 2000;
-    top: 10px;
-    right: -280px;
+    bottom: -520px;
+    left: 0;
     padding: 6px;
     border: 1px rgba(0, 0, 0, .4) solid;
     background-color: white;
@@ -50,14 +52,15 @@
   }
 </style>
 <link rel="stylesheet" href="css/demos.css" type="text/css" />
+<link rel="stylesheet" href="css/svg.css" type="text/css" />
 <link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css" />
 
 <body>
   <p>svg:</p>
   <div id="chartSVG">
-    <svg class="chart-container" font-size="12" width="1920" height="938" style="display: block;">
+    <svg class="chart-container" font-size="12" width="1000" height="1000" style="display: block;">
       <g></g>
-      <g class="chart-layer" transform="translate(190.53867488092885,79.2340260178106) scale(0.7988519164491478)">
+      <g class="chart-layer" transform="translate(-392, 0)">
         <g class="links">
           <g class="officer clickable-link">
             <path class="link officer clickable-link" linkIndex="1" linkMap="1" marker-end="url(#arrow_officer)" d="M684.3750036195959,312.9051926872065A0,0 0 0 1,974.9349462052803,477.72977126507664"
@@ -670,14 +673,14 @@
       }
     })
   }
-  function compressSpaces(s) { 
-    return s.replace(/[\s\r\t\n]+/gm, ' '); 
+  function compressSpaces(s) {
+    return s.replace(/[\s\r\t\n]+/gm, ' ');
   }
   function trim(s) {
     return s.replace(/^\s+|\s+$/g, '');
   }
 
-  function styleOutLineToInline (cssDom) {
+  function styleOutLineToInline(cssDom) {
     var cssStrs = compressSpaces(cssDom.childNodes[0].data);
     var cssSelectors = cssStrs.split('}');
     for (var i = 0; i < cssSelectors.length; i++) {
@@ -734,6 +737,8 @@
   // wait svg load completed
   setTimeout(function () {
     var svgDom = $cloneDom[0].firstElementChild;
+
+    // svg生成base64前，要将样式存储在外联style标签中
     $(svgDom).prepend(cssDom);
     var xmlSVG;
     if (XMLSerializer) {
@@ -768,7 +773,7 @@
         bgColor: 'white',
         bgOpacity: .4,
         minSize: [xsize, ysize],
-        setSelect:   [0, 0, 500, 500],
+        setSelect: [0, 0, 500, 500],
         aspectRatio: xsize / ysize
       }, function () {
         // Use the API to get the real image size
