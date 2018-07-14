@@ -16,21 +16,24 @@ router.get('/', function(req, res, next) {
 
 router.post('/api/graph/crop', function (req, res, next) {
 
-  var dataUrl_svgImg = req.body.dataUrl;
+  var xmlSVG = req.body.xmlSVG;
 
   // var locationInf = {"x":197,"y":0,"x2":496,"y2":203.32,"w":299,"h":203.32};
   var locationInf = JSON.parse(req.body.locationInf);
   var userId = '';
   var uniqueTag = userId +(new Date().valueOf());
   var svgImgName = "public/tmp/svg" + uniqueTag + ".jpeg";
-
+  var tmpPath = 'public/tmp';
   new Promise((resolve, reject)=>{
-    svgToImg.from(dataUrl_svgImg).toJpeg({
+    if (!fs.existsSync(tmpPath)) {
+      fs.mkdirSync(tmpPath)
+    }
+    svgToImg.from(xmlSVG).toJpeg({
       path: svgImgName
-    })
+    });
     setTimeout(()=>{
       resolve()
-    }, 1000)
+    }, 1000);
   }).then(() => {
     var img = new Image;
     img.src = fs.readFileSync(svgImgName);
