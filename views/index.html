@@ -658,12 +658,12 @@
    * @desc 将svg img对应的data url传给后端，后端生成一个jpg或png图片，并返回该图片的rul给前端
    * 
   */
-  function getImgUrlFromServer(xmlSVG, locationInf, callback) {
+  function getImgUrlFromServer(svgXmlString, locationInf, callback) {
     $.ajax({
       url: '/api/graph/crop',
       method: 'post',
       data: {
-        xmlSVG: xmlSVG,
+        svgXmlString: svgXmlString,
         locationInf: JSON.stringify(locationInf),
       },
       dataType: 'json',
@@ -754,10 +754,10 @@
 
     // svg生成base64前，要将样式存储在外联style标签中
     $(svgDom).prepend(cssDom);
-    var xmlSVG = new XMLSerializer().serializeToString(svgDom);
-    console.log(xmlSVG)
-    var dataUrl_svgImg = 'data:image/svg+xml;base64,' + jQuery.base64.encode(unescape(encodeURIComponent(xmlSVG)));
-    // var dataUrl_svgImg = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(xmlSVG)));
+    var svgXmlString = new XMLSerializer().serializeToString(svgDom);
+    console.log(svgXmlString)
+    var dataUrl_svgImg = 'data:image/svg+xml;base64,' + jQuery.base64.encode(unescape(encodeURIComponent(svgXmlString)));
+    // var dataUrl_svgImg = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgXmlString)));
 
     var imageDom = document.getElementById('target');
     var locationInf;
@@ -835,12 +835,12 @@
         a.download = name || '下载图片名称';
         a.href = dataUrl_canvas;
         a.dispatchEvent(event);
-        getImgUrlFromServer(xmlSVG, locationInf, function (url) {
+        getImgUrlFromServer(svgXmlString, locationInf, function (url) {
           console.log(url)
           // iframeDownload(url);
         })
       } else { //ie
-        getImgUrlFromServer(xmlSVG, locationInf, function (url) {
+        getImgUrlFromServer(svgXmlString, locationInf, function (url) {
           iframeDownload(url);
         })
       }
