@@ -11,16 +11,14 @@
   var imageDom = document.getElementById('target');
   imageDom.src = 'http://bigdata.sz.haizhi.com/static/imgs/static/graph1@2x.png';
   var cropBtn = document.getElementById('crop');
-  imageDom.onload = function () {
-    cropBtn.addEventListener('click', function () {
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
-      ctx.drawImage(imageDom, 0, 0);
+  cropBtn.addEventListener('click', function () {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(imageDom, 0, 0);
 
-      // causes a DOMException: Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
-      console.log(canvas.toDataURL());
-    })
-  };
+    // causes a DOMException: Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
+    console.log(canvas.toDataURL());
+  });
 
 </script>
 </html>
