@@ -11,7 +11,13 @@ const svgToImg = require("svg-to-img");
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
-  res.sendfile('./views/index.html'); 
+  res.sendfile('./views/index.html');
+});
+
+
+router.get('/tained_canvas', function(req, res, next) {
+  // res.render('index', { title: 'Express' });
+  res.sendfile('./views/tained_canvas.html');
 });
 
 router.post('/api/graph/crop', function (req, res, next) {
