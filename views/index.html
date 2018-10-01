@@ -630,7 +630,7 @@
       <img src="" class="jcrop-preview" alt="Preview" />
     </div>
   </div>
-  <input id="crop" type="button" value="crop"></input>
+  <input id="cropBtn" type="button" value="crop"></input>
   <canvas id="canvas" crossOrigin="Anonymous"></canvas>
   <iframe id="imgIframe"></iframe>
 </body>
@@ -756,8 +756,8 @@
     $(svgDom).prepend(cssDom);
     var svgXmlString = new XMLSerializer().serializeToString(svgDom);
     console.log(svgXmlString)
-    var dataUrl_svgImg = 'data:image/svg+xml;base64,' + jQuery.base64.encode(unescape(encodeURIComponent(svgXmlString)));
-    // var dataUrl_svgImg = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgXmlString)));
+    var svgDataUrl = 'data:image/svg+xml;base64,' + jQuery.base64.encode(unescape(encodeURIComponent(svgXmlString)));
+    // var svgDataUrl = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgXmlString)));
 
     var imageDom = document.getElementById('target');
     var locationInf;
@@ -775,7 +775,7 @@
       var xsize = $pcnt.width();
       var ysize = $pcnt.height();
 
-      $pimg.attr('src', dataUrl_svgImg);
+      $pimg.attr('src', svgDataUrl);
       $('#target').Jcrop({
         onChange: updatePreview,
         onSelect: updatePreview,
@@ -817,8 +817,8 @@
         }
       }
     }
-    imageDom.src = dataUrl_svgImg;
-    $('#crop').on('click', function () {
+    imageDom.src = svgDataUrl;
+    $('#cropBtn').on('click', function () {
       var canvas = document.getElementById('canvas');
       var $img = $('.jcrop-holder img');
       canvas.width = locationInf.w;
